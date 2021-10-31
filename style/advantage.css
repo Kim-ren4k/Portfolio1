@@ -1,0 +1,12 @@
+.advantage__title {
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 120%;
+  text-transform: uppercase;
+}
+
+.advantege__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
