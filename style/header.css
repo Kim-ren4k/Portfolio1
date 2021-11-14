@@ -1,0 +1,225 @@
+.header {
+  background-color: #a1b7c8;
+  min-height: 60px;
+  padding-top: 13px;
+  padding-bottom: 13px;
+}
+
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /*Отцентровать элементы в блоке (лого КИМ и кнопку меню)*/
+}
+
+.header__contacts {
+  /* контакты */
+  position: absolute;
+  background-color: #a1b7c8;
+  top: 61px;
+  left: 0; /* растягиваем блок в лево */
+  right: 0; /* растягиваем блок в вправо */
+  color: #fff;
+  /* display: none; */
+  height: 0;
+  overflow: hidden;
+  -webkit-transition: height 0.4s ease-in-out;
+  -o-transition: height 0.4s ease-in-out;
+  -moz-transition: height 0.4s ease-in-out;
+  transition: height 0.4s ease-in-out;
+}
+
+.contacts {
+  padding: 30px 15px;
+}
+
+.header__contacts_open {
+  height: auto;
+}
+
+.header__logo {
+  width: 124px;
+  /* display: block; */
+  /* height: 40px; */
+}
+
+.header__contact-burger {
+  display: block;
+  width: 27px;
+  height: 14px;
+  background-image: url(../img/menu.svg);
+  color: #fff;
+  -webkit-transition: color 0.2s;
+  -o-transition: color 0.2s;
+  -moz-transition: color 0.2s;
+  transition: color 0.2s;
+}
+
+.header__contacts-burger:focus {
+  color: #e87c40;
+}
+
+.header__contacts-burger:active {
+  color: #3b557d;
+}
+
+.header__contacts-burger-svg {
+  fill: currentColor;
+}
+
+.contacts__item {
+  margin-bottom: 50px;
+}
+.contacts__item:last-child {
+  margin-bottom: 0;
+}
+
+.contacts__head {
+  /*display: none;*/
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 25px;
+  text-transform: uppercase;
+  margin-bottom: 7px;
+}
+
+.contacts__head-social {
+  margin-bottom: 12px;
+}
+
+.contacts__link {
+  font-size: 16px;
+  line-height: 22px;
+  -webkit-transition: color 0.2s;
+  -o-transition: color 0.2s;
+  -moz-transition: color 0.2s;
+  transition: color 0.2s;
+}
+
+/* .contacts__link:focus,
+.contacts__link:hover {
+  color: #3b557d;
+}
+
+.contacts__link:active {
+  color: #e87c40;
+} */
+
+.contacts__social-list {
+  display: flex;
+  /* display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox; */
+}
+
+.contacts__social-item:not(:last-child) {
+  margin-right: 18px;
+}
+
+.contacts__social-item:last-child {
+  margin-right: 0; /*убрать отступ на последнем элементе, любо можно сделать через :not(:last-child) пример см выше*/
+}
+
+.contacts__social-link {
+  display: block;
+  /* background-color: tomato; */
+  width: 26px;
+  height: 26px;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* -webkit-transition: color 0.2s;
+  -o-transition: color 0.2s;
+  -moz-transition: color 0.2s;
+  transition: color 0.2s; */
+}
+
+.contacts__social-svg {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
+.contacts__social-link-whatsup {
+  background-image: url("../img/whats-app.svg");
+}
+
+.contacts__social-link_instagram {
+  background-image: url("../img/instagram.svg");
+}
+
+.contacts__social-link_facebook {
+  background-image: url("../img/facebook.svg");
+}
+
+.contacts__social-link_telegram {
+  background-image: url("../img/telegram.svg");
+}
+
+.contacts__social-image {
+  fill: rgb(255, 255, 255);
+  transition: fill 0.2s ease-in-out;
+}
+
+.contacts__social-link:hover .contacts__social-image {
+  fill: rgb(174, 0, 255);
+}
+
+@media (min-width: 768px) {
+  .header {
+    min-height: 100px;
+    padding: 28px 0;
+  }
+  .header__contacts {
+    top: 101px;
+    /* height: 144px; */
+  }
+  .header__logo {
+    width: 180px;
+  }
+  .contacts__list {
+    display: flex;
+    justify-content: space-between;
+  }
+  .contacts__item {
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 992px) {
+  .header {
+    width: 240px;
+    padding: 50px 0;
+  }
+
+  .header__container {
+    height: 100%;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 0 20px;
+  }
+
+  .header__contact-burger {
+    display: none;
+  }
+
+  .header__contacts {
+    position: static;
+    display: block;
+    padding: 0;
+    height: 400px;
+  }
+
+  .contacts__list {
+    flex-direction: column;
+  }
+
+  .contacts__item:not(:last-child) {
+    margin-bottom: 50px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .header {
+    padding-top: 60px;
+  }
+}

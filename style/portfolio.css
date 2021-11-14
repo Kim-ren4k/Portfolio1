@@ -1,0 +1,132 @@
+.potfolio__title {
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 120%;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+}
+
+.cart {
+  box-sizing: border-box;
+  max-width: 252px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 14px;
+}
+
+.card__picture {
+  align-self: center;
+  width: 155px;
+  height: 92px;
+  padding: 5px 18px 12px;
+  background-image: url("../img/macbook.svg");
+  background-size: cover;
+  margin-bottom: 30px;
+  z-index: 1;
+}
+
+.card__data {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card__client {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 120%;
+}
+.card__date {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 140%;
+}
+.card__title {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 120%;
+}
+
+.portfolio__clider {
+  position: relative; /**/
+  max-width: 290px; /*прописал чтобы стрелки не разлетались по краям, были прижаты к изображению*/
+  margin: 0px auto;
+}
+
+.portfolio__arrow {
+  width: 26px;
+  height: 26px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-image: url("../img/arrow.svg ");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain; /* задаем размер, если изображение больше*/
+}
+
+.portfolio__arrow_left {
+  left: 0;
+  z-index: 1;
+}
+
+.portfolio__arrow_right {
+  right: 0;
+  z-index: 1;
+  transform: rotate(180deg); /*перевернуть изображение на 180 град*/
+}
+
+.portfolio__arrow_disable {
+  opacity: 0.3;
+  pointer-events: none; /*деактивация кнопки по завершению слайдов*/
+}
+
+@media (min-width: 480px) {
+  .portfolio__clider {
+    max-width: 340px;
+  }
+  .potfolio__title {
+    font-size: 40px;
+  }
+}
+
+@media (min-width: 768px) {
+  .portfolio__clider {
+    max-width: 688px;
+  }
+}
+
+@media (min-width: 992px) {
+  .portfolio__clider {
+    max-width: 690px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .portfolio__title {
+    font-size: 50px;
+  }
+
+  .card__date {
+    font-size: 16px;
+  }
+
+  .card__title {
+    font-size: 18px;
+  }
+
+  .cart {
+    box-sizing: border-box;
+    max-width: 368px;
+  }
+
+  .card__picture {
+    width: 213px;
+    height: 126px;
+    padding: 5px 25px 14px;
+  }
+
+  .portfolio__clider {
+    max-width: 825px;
+  }
+}

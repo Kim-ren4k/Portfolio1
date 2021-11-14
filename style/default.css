@@ -1,0 +1,164 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+::after,
+::before {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #110303;
+  background-color: #ffffff;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  cursor: pointer;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+address {
+  font-style: normal;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+.container {
+  max-width: 1100px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+section {
+  padding: 30px 0;
+}
+
+.page__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba (0, 0, 0, 6);
+  overflow: auto;
+  padding: 15px;
+  display: flex;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  z-index: 999;
+}
+
+.visually-hedden {
+  position: absolute !important;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  margin: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden;
+}
+
+.page__overlay_modal {
+  display: none; /* Появление модального окна */
+}
+
+.page__overlay_modal_open {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 0 40px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    padding: 0 30px 0 270px;
+  }
+
+  section {
+    padding: 65px 0;
+  }
+
+  .page__header {
+    /* position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%; */
+    z-index: 500;
+    position: fixed;
+    left: -webkit-calc(50% - 50vw);
+    left: -moz-calc(50% - 50vw);
+    left: calc(50% - 50vw);
+    top: 0;
+    height: 100vh;
+  }
+
+  .header {
+    width: 240px;
+    padding: 50px 0;
+  }
+}
+
+@media (min-width: 1440px) {
+  .page {
+    background-image: linear-gradient(
+      to right,
+      #a1b7c8 24.5%,
+      transparent 24.5%
+    );
+  }
+  .page__header {
+    width: 355px;
+    left: 50;
+    left: calc(50% - 720px);
+  }
+
+  section {
+    padding: 75px 0;
+  }
+}
+
+@media (min-width: 2700px) {
+  .page {
+    background-image: linear-gradient(to right, #a1b7c8 30%, transparent 30%);
+  }
+}
