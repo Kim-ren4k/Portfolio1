@@ -62,6 +62,10 @@ const widthScroll = window.innerWidth - document.body.offsetWidth;  // убир�
 
     document.body.scrollPosition = window.scrollY;  // добавляем новое свойства в body scrollPosition 
 
+    document.documentElement.style.cssText = `
+    position: relative;
+    height: 100vh;`;
+
     document.body.style.cssText = `
     oveflow: hidden;
     position: fixed;
@@ -70,10 +74,11 @@ const widthScroll = window.innerWidth - document.body.offsetWidth;  // убир�
     height: 100wh;
     width: 100vw;
     padding-right: ${widthScroll}px;
-    background: tomato`;
+    `;
 };
 
 const enableScroll = () => {
+    document.documentElement.style.cssText = '';
     document.body.style.cssText = 'position: relative';  // передаю пустую строку, что приведет к обнудению свойств заданых в disabletScroll
     window.scroll({top:  document.body.scrollPosition})
 };
@@ -153,9 +158,6 @@ handlerModal(
 }
 
 
-/* убираю сколл со страницы если открыто что то поверх страницы, например мольное окно
-        */
-
 
 { // Бургер меню
     const headerContactBurger = document.querySelector('.header__contact-burger');
@@ -174,4 +176,51 @@ handlerModal(
         })
     };
     handlerBurger(headerContactBurger, headerContacts, 'header__contacts_open');
+}
+
+
+new Swiper('.swiper', {
+    navigation: {
+        nextEl: '.portfolio__arrow_right',
+        prevEl: '.portfolio__arrow_left',
+        disabledClass: 'portfolio__arrow_disable',
+    },
+    breakpoints: {
+        480: {
+            grid: {  
+                fill: 'row',
+                rows: 2
+            }
+        },
+
+            768: {
+                slidesPerView: 2,
+                grid: {
+                    fill: 'row',
+                    rows: 2
+                }
+        }
+    }
+})
+
+{ //Галерея
+    /*Использую делигирование буду кликать на portfolio__list, а на самом деле клик будет на portfolio__item*/
+    const portfolioList = document.querySelector('.portfolio__list');  // получаю portfolio__list (карточку) через document.querySelector
+    const = pageOverlay = document.createElement('div');
+    portfolioList.addEventListener('click', (event) => {  // при клике на portfolioList, событие клика addEventListener, запускаю ф-ю
+        // console.log(event.target);
+        /*  метод closest, он ищет селектор который мы передаем от того элемента на который мы прописали closest
+        и поднимается вверх пока не найдет этот эл, если находит то возвращает, если нет то шлет null(эл нет)*/
+        // console.log(event.target.closest('.cart'));  // проверка вывод по клику на элемент
+        
+        const cart = event.target.closest('.cart')
+
+        if  (cart) {
+            // document.body.append(pageOverlay)
+            console.log(cart.dataset.fullImage + '.img');
+            // console.log(event.target.closest('.cart'));
+        
+
+        }
+    })
 }

@@ -4,6 +4,14 @@
   margin-bottom: 20px;
 }
 
+/*Применение фильтра при наведении на фото*/
+img.present__photo:hover {
+  /*фильтр тнверсии фото, используется для инвертирования цветов на изображении, можетпирменяться в %*/
+  filter: invert(1);
+  /* filter: hue-rotate(180deg); */
+  transition: all 0.5s ease 0s;
+}
+
 .presents__group-title {
   margin-bottom: 18px;
 }

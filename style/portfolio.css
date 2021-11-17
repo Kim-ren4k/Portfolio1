@@ -13,6 +13,16 @@
   display: flex;
   flex-direction: column;
   padding: 20px 14px;
+  cursor: pointer; /*курсор при наведении рука*/
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.cart:hover {
+  /*фон при наведении, появление фона (время)*/
+  background-color: #eee;
+  transition: background-color 0.4s;
 }
 
 .card__picture {

@@ -24,6 +24,50 @@
   padding: 10px 10px 10px 81px;
 }
 
+/* применение тени и изменения цвета при наведении на текст*/
+.advantage__item_steck:hover {
+  color: #e87c40; /* Меняем цвет текста */
+  -webkit-text-shadow: 2px 2px 2px #000;
+  -moz-text-shadow: 2px 2px 2px #000;
+  text-shadow: 1px -2px 2px rgb(7, 7, 6); /* смещение-x | смещение-y | радиус-размытия | цвет */
+}
+
+h2.advantage__title {
+  /* color: #5a5a5a; Цвет заголовка */
+  text-align: center; /* Текст по центру */
+}
+/*  CSS код для линии над заголовком */
+h2.advantage__title:before {
+  content: "";
+  display: block;
+  height: 1px; /* Высота линии */
+  background: #f66d52; /* Цвет линии */
+  width: 150px; /* Ширина линии до наведения */
+  margin: 0 auto 10px; /* Отступ с боков по центру и снизу */
+  transition: 2s; /* Время, за которое линия возвращается после наведения */
+}
+
+h2.advantage__title:hover:before {
+  width: 260px; /* Ширина линии при наведении */
+  transition: ease-out 1s; /* Время, за которое линия расширяется при наведении */
+}
+
+/*  CSS код для линии под заголовком */
+h2.advantage__title:after {
+  content: "";
+  display: block;
+  height: 1px; /* Высота линии */
+  background: #f66d52; /* Цвет линии */
+  width: 150px; /* Ширина линии до наведения */
+  margin: 10px auto 0; /* Отступ с боков по центру и сверху */
+  transition: 2s; /* Время, за которое линия возвращается после наведения */
+}
+
+h2.advantage__title:hover:after {
+  width: 260px; /* Ширина линии при наведении */
+  transition: ease-out 1s; /* Время, за которое линия расширяется при наведении */
+}
+
 .advantage__item_steck {
   background-image: url("../img/steck.svg");
 }
